@@ -1,0 +1,1 @@
+export const ERROR_CODES: string[]; export function kstDate(s:string):string; export function resetEvaluationState():any; export function runFixture(s:any,f:any):any; export function applySuccessfulReading(s:any,r:any,m?:any):any; export function applyError(s:any,e:string,m?:any):any;

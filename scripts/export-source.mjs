@@ -1,0 +1,2 @@
+import {execFileSync} from 'node:child_process';import {mkdirSync,writeFileSync} from 'node:fs';
+const sha=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();mkdirSync('public/source',{recursive:true});execFileSync('git',['archive','--format=zip','--output=public/source/'+sha+'.zip','HEAD']);writeFileSync('public/source.json',JSON.stringify({commit_sha:sha,url:'/source/'+sha+'.zip'}));console.log('Source archive:',sha);
